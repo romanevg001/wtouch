@@ -1,0 +1,28 @@
+.container {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 25% 100px auto; */
+    grid-template:  25% 100px auto/50% 50%;
+    height: 100%;
+    grid-template-areas: 
+    "header header ";
+  /*   grid-column-gap: 5px;
+    grid-row-gap: 8px; */
+    grid-gap: 15px 10px;
+  /*   justify-items: center;
+    align-items: center; */
+    place-items: stretch;
+    justify-content: start;
+}
+.container .container-item li {
+    display: grid;
+    place-items: stretch;
+    grid-template:   50px / 20px auto 30% 30%;
+}
+.container .header {
+    grid-area: header;
+    background: pink;
+}
+.container div {
+    background: lightblue;
+}
