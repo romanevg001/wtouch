@@ -19,6 +19,8 @@ import { reducers } from './app.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { AppConfig }       from './app.config';
 import { HttpContract }       from './contracts/http.contract';
+/* import * as b from 'ngx-bootstrap'; */
+import { ShareModule }       from './components/share/share.module';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { HttpContract }       from './contracts/http.contract';
     StoreDevtoolsModule.instrument({
       maxAge: 25, 
       logOnly: environment.production, 
-    })
+    }),
+    ShareModule
+
   ],
   providers: [
     AppConfig,

@@ -1,24 +1,15 @@
 
-
-
-
-<div class="container">
-    <div class="container-item ">
-      <ul>
-        <li *ngFor="let user of users$ | async">
-          <div>{{user.id}}</div>
-          <a [routerLink]="['/users',user.id]" [class.active]="userId == user.id">{{user.name}}</a>
-          <div>{{user.email}}</div>
-          <div>{{user.phone}}</div>
-        </li> 
-      </ul>
-    </div>
-  <div class="container-item " *ngIf="userPosts$ | async as posts; else loading">
-      <div *ngFor="let post of userPosts$ | async">
-        <h3>id: {{post.id}} - {{post.title}}</h3>
-        <p>{{post.body}}</p>
+<accordion class="user-list">
+    <accordion-group *ngFor="let user of users$ | async" [routerLink]="['/users',user.id]"
+      [heading]="user.name" [isOpen]="userId == user.id" [panelClass]="active">
+      <div *ngIf="userPosts$ | async as posts; else loading">
+        <div *ngFor="let post of userPosts$ | async">
+          <h3>id: {{post.id}} - {{post.title}}</h3>
+          <p>{{post.body}}</p>
+        </div>
       </div>
-    </div>
-    <ng-template class="container-item " #loading>Loading...</ng-template>
-  </div>
-  
+      <ng-template #loading>Loading...</ng-template>
+    </accordion-group>
+
+  </accordion>
+   

@@ -9,7 +9,7 @@ import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css']
+  styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
   users$: Observable<any>;
