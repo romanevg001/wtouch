@@ -1,4 +1,5 @@
 import { Action } from '@ngrx/store';
+import { MovieItem } from './movie.models';
 
 export enum MovieActionTypes {
     EDIT =      '[Movie] Edit',
@@ -46,11 +47,11 @@ export class RemoveFail implements Action {
 
 export class Add implements Action {
     readonly type = MovieActionTypes.ADD;
-    constructor(public payload: any) {}
+    constructor(public payload: MovieItem) {}
 }
 export class AddSuccess implements Action {
     readonly type = MovieActionTypes.ADD_SUCCESS;
-    constructor(public payload: any) {}
+    constructor(public payload: MovieItem[]) {}
 }
 export class AddFail implements Action {
     readonly type = MovieActionTypes.ADD_FAIL;
@@ -63,7 +64,7 @@ export class Load implements Action {
 }
 export class LoadSuccess implements Action {
     readonly type = MovieActionTypes.LOAD_SUCCESS;
-    constructor(public payload: any[]) {}
+    constructor(public payload: MovieItem[]) {}
 }
 export class LoadFail implements Action {
     readonly type = MovieActionTypes.LOAD_FAIL;
@@ -72,7 +73,7 @@ export class LoadFail implements Action {
 
 export class LoadItem implements Action {
     readonly type = MovieActionTypes.LOAD_ITEM;
-    constructor(public payload: string) {}    
+    constructor(public payload: any) {}    
 }
 export class LoadItemSuccess implements Action {
     readonly type = MovieActionTypes.LOAD_ITEM_SUCCESS;

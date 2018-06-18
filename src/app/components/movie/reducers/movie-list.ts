@@ -1,5 +1,5 @@
 import { Action, createFeatureSelector, createSelector, ActionReducerMap } from '@ngrx/store';
-
+import { MovieItem } from '../movie.models';
 import {MovieActionTypes, MovieActionsUnion} from '../movie.actions';
   
 export interface State {
@@ -42,11 +42,11 @@ export function reducer(state = initialState,action: MovieActionsUnion): State {
         }
 
         case MovieActionTypes.ADD_SUCCESS: {
-            let d = state.data.push(action.payload);
+            state.data.push(action.payload)
             return {
                 ...state,
                 loaded: true,
-                data: d
+                data: state.data
             };
         }
         

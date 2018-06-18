@@ -38,7 +38,7 @@ export class MovieService {
 
 
     public editMovie(id:string): Observable<any> {
-        let url = this._httpContract.setBaseApiUrl(this._config.getConfig('userPosts').replace('{user}',id));
+        let url = this._httpContract.setBaseApiUrl(this._config.getConfig('post').replace('{id}',id));
         let headers = this._httpContract.commonHeaders();
         let options = new RequestOptions({ headers: headers });
         return this._http.get(url, options)

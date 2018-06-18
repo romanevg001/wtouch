@@ -4,6 +4,7 @@ import { select, Store } from '@ngrx/store';
 import * as MovieActions from '../movie.actions';
 import * as reducer from '../reducers';
 import {MatDialogRef} from '@angular/material';
+import { MovieItem } from '../movie.models';
 
 @Component({
   selector: 'app-add-movie',

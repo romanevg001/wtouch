@@ -5,13 +5,13 @@ import {MovieActionTypes, MovieActionsUnion} from '../movie.actions';
 export interface State {
     loaded: boolean;
     loading: boolean;
-    data: string[];
+    data: any[];
 }
 
 const initialState: State = {
     loaded: false,
     loading: false,
-    data: [],
+    data: []
 };
 
 export function reducer(state = initialState,action: MovieActionsUnion): State {
