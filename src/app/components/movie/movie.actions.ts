@@ -33,7 +33,7 @@ export class EditFail implements Action {
 
 export class Remove implements Action {
     readonly type = MovieActionTypes.REMOVE;
-    constructor(public payload: string) {}
+    constructor(public payload: any) {}
 }
 export class RemoveSuccess implements Action {
     readonly type = MovieActionTypes.REMOVE_SUCCESS;
@@ -46,11 +46,11 @@ export class RemoveFail implements Action {
 
 export class Add implements Action {
     readonly type = MovieActionTypes.ADD;
-    constructor(public payload: string) {}
+    constructor(public payload: any) {}
 }
 export class AddSuccess implements Action {
     readonly type = MovieActionTypes.ADD_SUCCESS;
-    constructor(public payload: string) {}
+    constructor(public payload: any) {}
 }
 export class AddFail implements Action {
     readonly type = MovieActionTypes.ADD_FAIL;
@@ -59,6 +59,7 @@ export class AddFail implements Action {
 
 export class Load implements Action {
     readonly type = MovieActionTypes.LOAD;
+    constructor(public payload: string) {}
 }
 export class LoadSuccess implements Action {
     readonly type = MovieActionTypes.LOAD_SUCCESS;

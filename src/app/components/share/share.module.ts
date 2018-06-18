@@ -7,7 +7,7 @@ import * as m from '@angular/material';
 
 import {CdkTableModule} from '@angular/cdk/table'
 import {OverlayModule} from '@angular/cdk/overlay';
-/* 
+
 @NgModule({
   exports: [
     // CDk
@@ -48,26 +48,17 @@ import {OverlayModule} from '@angular/cdk/overlay';
   ]
 })
 export class PlunkerMaterialModule {}
- */
 
 
-import * as b from 'ngx-bootstrap';
 
-/* @NgModule({
-  exports: [
-    b.AccordionModule,
-    b.AlertModule
-  ]
-})
-export class PlunkerBootstrapModule {}
- */
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    b.AccordionModule.forRoot()
+    PlunkerMaterialModule
 
   ],
   declarations: [
@@ -76,7 +67,7 @@ export class PlunkerBootstrapModule {}
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    b.AccordionModule
+    PlunkerMaterialModule
   ],
   providers: [
   ]

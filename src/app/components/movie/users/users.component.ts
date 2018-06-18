@@ -32,10 +32,10 @@ export class UsersComponent implements OnInit {
   }
 
   ngOnInit() {
-
+/* 
     this.store.dispatch(new MovieActions.Load());
     this.users$ = this.store.select(reducer.getMovieList);
-
+ */
   }
  
 

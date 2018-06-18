@@ -9,10 +9,16 @@ import { EffectsModule } from '@ngrx/effects';
 import { reducers } from './reducers';
 import { MovieEffects } from './movie.effect';
 import { UsersComponent } from './users/users.component';
+import { MovieListComponent } from './movie-list/movie-list.component';
+import { AddMovieComponent } from './add-movie/add-movie.component';
+import { MovieComponent } from './movie/movie.component';
 
 @NgModule({
   declarations: [
-    UsersComponent
+    UsersComponent,
+    MovieListComponent,
+    AddMovieComponent,
+    MovieComponent
   ],
   imports: [
     RouterModule.forChild(routes),
@@ -20,9 +26,12 @@ import { UsersComponent } from './users/users.component';
     StoreModule.forFeature('movies', reducers),
     EffectsModule.forFeature([MovieEffects]),
   ],
+  entryComponents: [
+    AddMovieComponent
+  ],
   exports: [RouterModule],  
   bootstrap: [
-    UsersComponent
+    MovieListComponent
   ],
   providers:[MovieService]
   

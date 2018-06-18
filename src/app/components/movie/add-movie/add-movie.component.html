@@ -1,0 +1,11 @@
+<form class="example-container" [formGroup]="addMovieForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input matInput placeholder="Title" formControlName="title" >
+    </mat-form-field>
+  
+    <mat-form-field>
+      <textarea matInput placeholder="Body" formControlName="body" ></textarea>
+    </mat-form-field>
+    <button mat-button type="submit">Create</button>
+  </form>
+  

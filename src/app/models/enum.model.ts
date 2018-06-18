@@ -1,0 +1,25 @@
+export enum WaytosaveType {
+    API = 1, 
+    LocalStorage = 2
+}
+
+export enum QuestionType {
+    Select = 1, 
+    Text = 2,
+    Radio = 3
+}
+
+export enum EvaluateType {
+  FirstWay = 1,
+  SecondWay = 2
+}
+
+export function enumToArray(en) {
+  let map: {id: number; name: string}[] = [];
+  for(var n in en) {
+      if (typeof en[n] === 'number') {
+          map.push({id: <any>en[n], name: n});
+      }
+  }
+    return map;
+}

@@ -1,0 +1,4 @@
+<select (change)="changeValue(qz,qz.answers[$event.target.selectedIndex])">
+  <option [value]="">-- Выбери --</option>
+  <option *ngFor="let answer of qz.answers" [value]="answer.id" >{{answer.answer}}</option>
+</select> 

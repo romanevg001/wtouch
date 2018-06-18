@@ -1,0 +1,9 @@
+<select (change)="changeType(qz,waytosaveType[$event.target.selectedIndex-1])">
+  <option [value]="">-- Выбери cпособ сохранения  --</option>          
+  <option *ngFor="let qtype of waytosaveType" [value]="qtype.id">{{qtype.name}}</option>
+</select> 
+
+<select (change)="changeEvaluateType(qz,evaluateType[$event.target.selectedIndex-1])">
+  <option [value]="">-- Выбери способ подсчета --</option>          
+  <option *ngFor="let qtype of evaluateType" [value]="qtype.id">{{qtype.name}}</option>
+</select> 

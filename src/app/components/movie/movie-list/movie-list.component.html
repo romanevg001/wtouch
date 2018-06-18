@@ -1,0 +1,21 @@
+<button mat-icon-button (click)="openDialog()">
+    <mat-icon>add</mat-icon> Add movie
+</button>
+<mat-card class="example-card">
+ 
+    <mat-card-content>
+        <mat-list>
+          <mat-list-item  *ngFor="let movie of movieList$ | async">
+
+            <a matLine [href]="['/movies',movie.id]">{{movie.id}} - {{movie.title}} </a>
+          
+            <button mat-icon-button (click)="deleteMovie(movie.id)">
+                <mat-icon>delete</mat-icon>
+            </button>
+
+            <mat-divider></mat-divider>
+          </mat-list-item>
+        </mat-list>
+
+</mat-card-content>
+</mat-card>
