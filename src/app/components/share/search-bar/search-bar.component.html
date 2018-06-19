@@ -1,11 +1,14 @@
 <form class="search-bar" *ngIf="showSearch" [formGroup]="searchForm" (ngSubmit)="onSubmit()">
     <div>
         <span class="icon-close resetBtn" (click)="onReset()" *ngIf="search.valid && search.dirty || searchInfo?.result"></span>
-        <input type="search"  id="inputsearchbar{{timestamp}}" autofocus="autofocus" [placeholder]="searchInfo?.placeHolder" formControlName="search" 
+        <mat-form-field class="example-full-width">
+            <input type="search" matInput id="inputsearchbar{{timestamp}}" autofocus="autofocus" [placeholder]="searchInfo?.placeHolder" formControlName="search" 
         [value]="searchInfo?.result"  autocomplete="off">
+        </mat-form-field>
+
         <div class="dropdown-pane bottom search-result" [class.is-open]="isOpen" *ngIf="searchInfo?.resultsList">   
             <div *ngFor="let result of searchInfo.resultsList" (click)="onSubmit(result)">
-                    {{result.fullAddress? result.fullAddress  : result.name}}
+                    {{result.title ? result.title  : result.name}}
             </div>
             <div *ngIf="searchInfo && !searchInfo.resultsList.length && !searchInfo.searching">Ничего не найдено</div>
         </div>

@@ -24,7 +24,6 @@ export class MovieComponent implements OnInit {
 
     this.store.dispatch(new MovieActions.LoadItem(id));
     this.movie$ = this.store.select(reducer.getMovie);
-   
   }
 
 }

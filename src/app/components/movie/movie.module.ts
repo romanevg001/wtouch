@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { routes } from './movie.router';
-import { ShareModule } from '../share/share.module';
 import { MovieService } from './movie.services';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -12,6 +11,8 @@ import { UsersComponent } from './users/users.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
 import { AddMovieComponent } from './add-movie/add-movie.component';
 import { MovieComponent } from './movie/movie.component';
+//import { SearchMovieComponent } from './search-movie/search-movie.component';
+import { ShareModule }       from '../share/share.module';
 
 @NgModule({
   declarations: [
@@ -19,12 +20,13 @@ import { MovieComponent } from './movie/movie.component';
     MovieListComponent,
     AddMovieComponent,
     MovieComponent
+    //SearchMovieComponent
   ],
   imports: [
     RouterModule.forChild(routes),
-    ShareModule,
     StoreModule.forFeature('movies', reducers),
     EffectsModule.forFeature([MovieEffects]),
+    ShareModule
   ],
   entryComponents: [
     AddMovieComponent

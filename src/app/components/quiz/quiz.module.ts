@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { routes } from './quiz.router';
-import { ShareModule } from '../share/share.module';
 import { QuizService } from './quiz.services';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -28,7 +27,6 @@ import { QuizEstimateComponent } from './quiz-estimate/quiz-estimate.component';
   ],
   imports: [
     RouterModule.forChild(routes),
-    ShareModule,
   /*   StoreModule.forFeature('quiz', reducers),
     EffectsModule.forFeature([MovieEffects]), */
   ],

@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule, DatePipe} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
+import {SearchBarComponent} from './search-bar/search-bar.component';
 
 import * as m from '@angular/material';
 
@@ -50,27 +51,25 @@ import {OverlayModule} from '@angular/cdk/overlay';
 export class PlunkerMaterialModule {}
 
 
-
-
 @NgModule({
   imports: [
+    PlunkerMaterialModule,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule,
-    PlunkerMaterialModule
-
+    RouterModule
   ],
   declarations: [
+    SearchBarComponent
   ],
   exports: [
+    PlunkerMaterialModule,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    PlunkerMaterialModule
+    SearchBarComponent
   ],
-  providers: [
-  ]
+  providers: []
 })
 
 export class ShareModule {

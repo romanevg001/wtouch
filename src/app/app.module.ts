@@ -28,6 +28,7 @@ import { ShareModule }       from './components/share/share.module';
     
   ],
   imports: [
+    ShareModule,
     BrowserModule,
     //ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production}),
     BrowserAnimationsModule,
@@ -47,8 +48,8 @@ import { ShareModule }       from './components/share/share.module';
     StoreDevtoolsModule.instrument({
       maxAge: 25, 
       logOnly: environment.production, 
-    }),
-    ShareModule
+    })
+    
 
   ],
   providers: [

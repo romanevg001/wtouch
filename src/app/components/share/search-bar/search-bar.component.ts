@@ -34,6 +34,7 @@ export class SearchBarComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.searchInfo)
     if(this.searchInfo && this.timestamp) this.gotSearchInfo();
   }
 

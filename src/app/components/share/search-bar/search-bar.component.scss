@@ -26,10 +26,10 @@
 
 
 .search-bar {
-	padding: 0 25px 0 95px;
+	padding: 0;// 25px;// 0 95px;
 	width: 100%;
     position: relative;
-    
+ /*    
     &:before {
         content: "\E957";
         font-family: 'icomoon';
@@ -40,7 +40,7 @@
         top:2px;
 		color: #939597;
 		line-height: 1.5em;
-    }
+    } */
 	
 
     &>div {
@@ -83,4 +83,8 @@
             height: 30px;
         }
     }
+}
+
+.example-full-width {
+    width: 100%
 }
