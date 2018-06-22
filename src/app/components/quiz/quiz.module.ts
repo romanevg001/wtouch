@@ -8,25 +8,23 @@ import { EffectsModule } from '@ngrx/effects';
 import { reducers } from './reducers';
 import { MovieEffects } from './movie.effect';
 */
-import { QuizComponent } from './quiz/quiz.component';
 import { QuizSelectComponent } from './quiz-select/quiz-select.component';
 import { QuizInputComponent } from './quiz-input/quiz-input.component';
 import { QuizCheckboxComponent } from './quiz-checkbox/quiz-checkbox.component';
-import { QuizFieldSettingsComponent } from './quiz-field-settings/quiz-field-settings.component';
-import { QuizEstimateComponent } from './quiz-estimate/quiz-estimate.component';
+import { QuizComponent } from './cquiz/quiz.component';
+import { ShareModule } from '../share/share.module';
 
 
 @NgModule({
   declarations: [
-    QuizComponent,
     QuizSelectComponent,
     QuizInputComponent,
-    QuizCheckboxComponent,
-    QuizFieldSettingsComponent,
-    QuizEstimateComponent
+    //QuizCheckboxComponent,
+    QuizComponent
   ],
   imports: [
     RouterModule.forChild(routes),
+    ShareModule
   /*   StoreModule.forFeature('quiz', reducers),
     EffectsModule.forFeature([MovieEffects]), */
   ],

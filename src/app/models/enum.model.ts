@@ -9,9 +9,9 @@ export enum QuestionType {
     Radio = 3
 }
 
-export enum EvaluateType {
-  FirstWay = 1,
-  SecondWay = 2
+export enum EstimateType {
+    OneTry = 1,
+    SeveralTries = 2
 }
 
 export function enumToArray(en) {

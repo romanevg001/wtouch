@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { QuizComponent } from './quiz/quiz.component';
+import { QuizComponent } from './cquiz/quiz.component';
 
 export const routes: Routes = [
     {

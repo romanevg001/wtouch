@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Quiz} from "../quiz.model";
+import {WayToEstimate} from "../cquiz/wayToEstimate";
+import {WayToSave} from "../cquiz/wayToSave";
 
 @Component({
   selector: 'app-quiz-select',
@@ -8,15 +11,21 @@ import { Component, OnInit } from '@angular/core';
   outputs: ['qz']
 })
 export class QuizSelectComponent implements OnInit {
-
+  qz: Quiz;
   constructor() { }
 
   ngOnInit() {
   }
 
-  changeValue(question){
-    let val =question.answers[0];
-    val.valid = (val.answer == val.rightAnswer) ? true : false;
-    question.historyAnswers.push(val);
+  changeValue(val){
+    console.log(val)
+    //val.valid = (val.answer == val.rightAnswer) ? true : false;
+    this.qz.historyAnswers.push(val);
+    this.qz.evaluateMark = WayToEstimate.init(this.qz).countEstimate();
+
+  }
+
+  save(){
+    (WayToSave.init(this.qz)).save()
   }
 }
