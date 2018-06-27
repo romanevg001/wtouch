@@ -10,7 +10,6 @@ import { MovieEffects } from './movie.effect';
 */
 import { QuizSelectComponent } from './quiz-select/quiz-select.component';
 import { QuizInputComponent } from './quiz-input/quiz-input.component';
-import { QuizCheckboxComponent } from './quiz-checkbox/quiz-checkbox.component';
 import { QuizComponent } from './cquiz/quiz.component';
 import { ShareModule } from '../share/share.module';
 import { WayToSaveComponent } from './quiz-save/way-to-save/way-to-save.component';
@@ -20,7 +19,6 @@ import { WayToSaveComponent } from './quiz-save/way-to-save/way-to-save.componen
   declarations: [
     QuizSelectComponent,
     QuizInputComponent,
-    //QuizCheckboxComponent,
     QuizComponent,
     WayToSaveComponent
   ],

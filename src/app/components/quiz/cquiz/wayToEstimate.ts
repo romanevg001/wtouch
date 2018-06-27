@@ -20,7 +20,7 @@ export class WayToEstimate {
     }
 }
 
- class OneTry implements IWayToEstimate {
+class OneTry implements IWayToEstimate {
 
     constructor(private historyAnswers: Answers[]){    }
     
@@ -29,7 +29,7 @@ export class WayToEstimate {
     }
 }
 
- class SeveralTries implements IWayToEstimate {
+class SeveralTries implements IWayToEstimate {
 
     constructor(private historyAnswers: Answers[]){}
 
