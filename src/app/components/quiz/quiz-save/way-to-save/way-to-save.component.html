@@ -1,0 +1,4 @@
+<select (change)="changeValue(saveTypeList[$event.target.selectedIndex-1])">
+  <option [value]="">-- Choose way to save --</option>
+  <option *ngFor="let saveType of saveTypeList" [value]="saveType.id"  [selected]="(qz.waytosave==saveType.id)" >{{saveType.name}}</option>
+</select> 

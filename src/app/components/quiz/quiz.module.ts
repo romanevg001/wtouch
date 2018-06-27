@@ -13,6 +13,7 @@ import { QuizInputComponent } from './quiz-input/quiz-input.component';
 import { QuizCheckboxComponent } from './quiz-checkbox/quiz-checkbox.component';
 import { QuizComponent } from './cquiz/quiz.component';
 import { ShareModule } from '../share/share.module';
+import { WayToSaveComponent } from './quiz-save/way-to-save/way-to-save.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ShareModule } from '../share/share.module';
     QuizSelectComponent,
     QuizInputComponent,
     //QuizCheckboxComponent,
-    QuizComponent
+    QuizComponent,
+    WayToSaveComponent
   ],
   imports: [
     RouterModule.forChild(routes),

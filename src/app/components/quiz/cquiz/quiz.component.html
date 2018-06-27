@@ -2,9 +2,12 @@
  <mat-list>
     <mat-list-item *ngFor="let qz of quiz">
        <h3 matLine>{{qz.question}} --- {{qz.evaluateMark}}</h3>
-       <p matLine>
+       <div matLine>
+            <div>
+                Way to save: <app-way-to-save [qz]="qz"></app-way-to-save>
+            </div>
             <app-quiz-input *ngIf="qz.fieldType == questionType.Text" [qz]="qz"></app-quiz-input>
             <app-quiz-select *ngIf="qz.fieldType == questionType.Select" [qz]="qz"></app-quiz-select>
-        </p>
+        </div>
     </mat-list-item>
 </mat-list>

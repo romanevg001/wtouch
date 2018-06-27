@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Quiz} from "../quiz.model";
 import {WayToEstimate} from "../cquiz/wayToEstimate";
-import {WayToSave} from "../cquiz/wayToSave";
+import {WayToSave} from "../quiz-save/wayToSave";
 
 @Component({
   selector: 'app-quiz-select',
@@ -26,6 +26,7 @@ export class QuizSelectComponent implements OnInit {
   }
 
   save(){
-    (WayToSave.init(this.qz)).save()
+    new WayToSave(this.qz)
+
   }
 }
