@@ -9,17 +9,15 @@ export interface IWayToEstimate {
 export class WayToEstimate {
 
     static init(qz: Quiz){
-      /*   new EnumToArray(EstimateType).numArray.forEach((item)=>{
-            if((item.id == qz.evaluateType) && (typeof this['_'+item.name] == "function")) new ('_'+item.name)(qz.historyAnswers)
-        }) */
-
-        if(qz.evaluateType == EstimateType.OneTry){
-            return new OneTry(qz.historyAnswers)
-        }else if (qz.evaluateType == EstimateType.SeveralTries) {
-            return new SeveralTries(qz.historyAnswers)
+        switch(qz.evaluateType){
+            case EstimateType.OneTry: {
+                return new OneTry(qz.historyAnswers)
+            }
+            case EstimateType.SeveralTries: {
+                return new SeveralTries(qz.historyAnswers)
+            }
         }
     }
-  
 }
 
  class OneTry implements IWayToEstimate {
