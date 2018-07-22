@@ -50,7 +50,6 @@ export class EnumToArray{
     }
 
     private _toArray() {
-       console.log(this.en)
         for(var n in this.en) {
             if (typeof this.en[n] === 'number') {
                 this.numArray.push({id: <any>this.en[n], name: n});

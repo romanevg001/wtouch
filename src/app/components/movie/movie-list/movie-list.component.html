@@ -3,20 +3,27 @@
 </button>
 <app-search-bar [searchInfo]="searchInfo"></app-search-bar>
 <mat-card class="example-card">
- 
-    <mat-card-content>
-        <mat-list>
-          <mat-list-item  *ngFor="let movie of movieList$ | async">
 
-            <a matLine [routerLink]="['/movies',movie.id]">{{movie.id}} - {{movie.title}} </a>
-          
-            <button mat-icon-button (click)="deleteMovie(movie.id)">
-                <mat-icon>delete</mat-icon>
-            </button>
 
-            <mat-divider></mat-divider>
-          </mat-list-item>
-        </mat-list>
+        <mat-card-content>
+            <mat-list>
+                <mat-list-item  *ngFor="let movie of movieList$ | async">
+    
+                <a matLine [routerLink]="['/movies',movie.id]">{{movie.id}} - {{movie.title}} </a>
+                
+                <button mat-icon-button (click)="deleteMovie(movie.id)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+                <button mat-icon-button (click)="editMovie(movie)">
+                        <mat-icon>edit</mat-icon>
+                </button>
+    
+                <mat-divider></mat-divider>
+                </mat-list-item>
+            </mat-list>
+        </mat-card-content>
+    <div *ngIf="editingMovie">
+        <app-edit-movie [data]='editingMovie'></app-edit-movie> 
+    </div>
 
-</mat-card-content>
 </mat-card>

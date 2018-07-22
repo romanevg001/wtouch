@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
 import * as MovieActions from '../movie.actions';
 import * as reducer from '../reducers';
 import {MatDialog, MatDialogRef} from '@angular/material';
@@ -12,12 +11,14 @@ import { SearchModel } from '../../../models/common.model';
 @Component({
   selector: 'app-movie-list',
   templateUrl: './movie-list.component.html',
-  styleUrls: ['./movie-list.component.scss']
+  styleUrls: ['./movie-list.component.scss'],
+
 })
 export class MovieListComponent implements OnInit {
   movieList$;
   searchInfo:SearchModel = new SearchModel();
   searchResults;
+  editingMovie;
 
   constructor(
     private store: Store<reducer.State>,
@@ -65,6 +66,9 @@ export class MovieListComponent implements OnInit {
     this.store.subscribe((d)=>{
       console.log(d)
     })
+  }
+  editMovie(movie){
+    this.editingMovie = movie;
   }
 
 }

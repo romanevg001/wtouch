@@ -23,10 +23,7 @@ export class MovieEffects {
       map((action: any) => action.payload),
       mergeMap((searchmovie) => {
         return this._movieService.getMovieList(searchmovie).pipe(
-            map(list => {
-                console.log(list)
-                return new MovieActions.LoadSuccess(list)
-            }),
+            map(list =>  new MovieActions.LoadSuccess(list)),
             catchError(err=> of(new MovieActions.LoadFail(err)))
         )
 

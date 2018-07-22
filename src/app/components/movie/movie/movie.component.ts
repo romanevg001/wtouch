@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import * as MovieActions from '../movie.actions';
@@ -8,10 +8,13 @@ import { MovieItem } from '../movie.models';
 @Component({
   selector: 'app-movie',
   templateUrl: './movie.component.html',
-  styleUrls: ['./movie.component.scss']
+  styleUrls: ['./movie.component.scss'],
+  
 })
 export class MovieComponent implements OnInit {
   movie$;
+  currentMovie;
+
   constructor(
     private store: Store<reducer.State>,
     private _activatedRoute: ActivatedRoute

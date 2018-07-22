@@ -13,13 +13,15 @@ import { AddMovieComponent } from './add-movie/add-movie.component';
 import { MovieComponent } from './movie/movie.component';
 //import { SearchMovieComponent } from './search-movie/search-movie.component';
 import { ShareModule }       from '../share/share.module';
+import { EditMovieComponent } from './edit-movie/edit-movie.component';
 
 @NgModule({
   declarations: [
     UsersComponent,
     MovieListComponent,
     AddMovieComponent,
-    MovieComponent
+    MovieComponent,
+    EditMovieComponent
     //SearchMovieComponent
   ],
   imports: [
