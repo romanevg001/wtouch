@@ -3,5 +3,9 @@
     "users":"users",
     "posts":"posts",
     "post":"posts/{id}",
-    "userPosts":"posts?userId={user}"
+    "userPosts":"posts?userId={user}",
+    
+    "small": "100",
+    "medium":"200",
+    "large":"300"
 }

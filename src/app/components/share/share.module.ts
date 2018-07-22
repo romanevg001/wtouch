@@ -3,6 +3,7 @@ import {CommonModule, DatePipe} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {SearchBarComponent} from './search-bar/search-bar.component';
+import {ViewportSizeDirective} from './viewport-size.directive';
 
 import * as m from '@angular/material';
 
@@ -60,14 +61,16 @@ export class PlunkerMaterialModule {}
     RouterModule
   ],
   declarations: [
-    SearchBarComponent
+    SearchBarComponent,
+    ViewportSizeDirective
   ],
   exports: [
     PlunkerMaterialModule,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    SearchBarComponent
+    SearchBarComponent,
+    ViewportSizeDirective
   ],
   providers: []
 })

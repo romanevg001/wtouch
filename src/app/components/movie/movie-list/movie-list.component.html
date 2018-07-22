@@ -1,7 +1,13 @@
+<div *ifViewportSize="'small'">show small</div>
+<div *ifViewportSize="'medium'">show medium</div>
+<div *ifViewportSize="'large'">show large</div>
+
 <button mat-icon-button (click)="openDialog()">
     <mat-icon>add</mat-icon> Add movie
 </button>
 <app-search-bar [searchInfo]="searchInfo"></app-search-bar>
+
+
 <mat-card class="example-card">
 
 
