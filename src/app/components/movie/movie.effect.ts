@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
 import { Effect, Actions, ofType } from '@ngrx/effects';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
 import { of } from 'rxjs/observable/of';
 import * as MovieActions from './movie.actions';
 import { switchMap, toArray, map, catchError, mergeMap } from 'rxjs/operators';
 import {MovieService} from './movie.services';
 import { select, Store } from '@ngrx/store';
+import { pluck } from '../../../../node_modules/rxjs-compat/operator/pluck';
 
 @Injectable()
 export class MovieEffects {
@@ -15,13 +15,19 @@ export class MovieEffects {
     constructor(
         private actions$: Actions,
         private _movieService:MovieService
-    ) {}
+    ) {
+
+        console.log(' this.actions$', this.actions$, typeof  this.actions$)
+     
+    }
     
     @Effect()
     loadCollection$: Observable<Action> = this.actions$.pipe(
+        map((action: any) => {console.log(action); return action}),
       ofType(MovieActions.MovieActionTypes.LOAD),
       map((action: any) => action.payload),
       mergeMap((searchmovie) => {
+          console.log('searchmovie',searchmovie)
         return this._movieService.getMovieList(searchmovie).pipe(
             map(list =>  new MovieActions.LoadSuccess(list)),
             catchError(err=> of(new MovieActions.LoadFail(err)))

@@ -14,6 +14,7 @@ import { MovieComponent } from './movie/movie.component';
 //import { SearchMovieComponent } from './search-movie/search-movie.component';
 import { ShareModule }       from '../share/share.module';
 import { EditMovieComponent } from './edit-movie/edit-movie.component';
+import { MovieItemComponent } from './movie-item/movie-item.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { EditMovieComponent } from './edit-movie/edit-movie.component';
     MovieListComponent,
     AddMovieComponent,
     MovieComponent,
-    EditMovieComponent
+    EditMovieComponent,
+    MovieItemComponent
     //SearchMovieComponent
   ],
   imports: [

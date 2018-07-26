@@ -1,0 +1,13 @@
+<mat-list-item *ngIf="movie">
+    
+    <a matLine [routerLink]="['/movies',movie.id]">{{movie.id}} - {{movie.title}} </a>
+    
+   <!--  <button mat-icon-button #btnDeleteMovie>
+        <mat-icon>delete</mat-icon>
+    </button> -->
+    <button mat-icon-button (click)="editMovie(movie)">
+            <mat-icon>edit</mat-icon>
+    </button>
+
+    <mat-divider></mat-divider>
+    </mat-list-item>

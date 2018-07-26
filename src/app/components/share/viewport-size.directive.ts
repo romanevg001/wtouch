@@ -22,6 +22,7 @@ export class ViewportSizeDirective {
     this._ngZone.runOutsideAngular(()=>{
         window.addEventListener('resize',this.renderEl.bind(this))
     })
+   
   }
 
   renderEl(){
@@ -36,6 +37,7 @@ export class ViewportSizeDirective {
         this._viewContainer.clear();
         this.hasView = false;
       }
+      
   }
 
 }
