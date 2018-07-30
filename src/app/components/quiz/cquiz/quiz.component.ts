@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as  en  from '../../../models/enum.model';
+import * as  en  from '../../../share/models/enum.model';
 import * as  m  from '../quiz.model';
 
 

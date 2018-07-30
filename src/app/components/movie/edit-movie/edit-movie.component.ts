@@ -8,7 +8,7 @@ import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, OnChange
   changeDetection: ChangeDetectionStrategy.OnPush
 
 })
-export class EditMovieComponent implements OnInit,OnChanges {
+export class EditMovieComponent {
   @Input() data;
   public name:number=0;
 
@@ -18,20 +18,6 @@ export class EditMovieComponent implements OnInit,OnChanges {
       this.name += 3;
       if(this.name > 80) clearInterval(key);
     },1000)
-
-  }
-
-  ngOnInit() {
-    console.log('ngOnInit')
-
-  }
-
-
-  ngOnChanges(){
-    console.log('ngOnChanges')
- /*    this.cd.reattach();
-    
-    setTimeout(()=>this.cd.detach()) */
 
   }
 

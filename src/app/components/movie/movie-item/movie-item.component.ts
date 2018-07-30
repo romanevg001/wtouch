@@ -1,6 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, OnChanges, DoCheck, ChangeDetectorRef,
   ViewChild, AfterViewInit, ElementRef, Input, Output, EventEmitter } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-movie-item',
@@ -10,39 +9,49 @@ import { Observable } from 'rxjs/Observable';
   outputs:['emEditMovie'],
   //changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MovieItemComponent implements OnInit, OnChanges, DoCheck  {
+export class MovieItemComponent implements OnInit, OnChanges,AfterViewInit, DoCheck  {
   movie;
-  origMovie = {...this.movie};
+  origMovie;
   emEditMovie = new EventEmitter();
+  conter:number = 0;
   
   constructor(private _cd: ChangeDetectorRef) {
-
+    this.origMovie = {...this.movie};
   }
 
   ngOnInit() {
-    this.offUpdate();
+    
+    
+  }
+
+  ngAfterViewInit(){
+    this.detach();
+  }
+
+
+  ngOnChanges(){
+
   }
 
   ngDoCheck(){
-    if(JSON.stringify(this.origMovie)!=JSON.stringify(this.movie)){
-      this.updateView();
-      setTimeout(()=>this.offUpdate())
-    }   
-  }
+    console.log(this.origMovie.title,' === ',this.movie.title)
 
-  ngOnChanges(){
-    console.log(this.movie)
+    if( (JSON.stringify(this.origMovie)!=JSON.stringify(this.movie))){
+      this.reattach();
+    }
   }
 
   editMovie(movie){
     this.emEditMovie.emit(movie)
   }
 
-  updateView(){
+  reattach(){
+   // this._cd.markForCheck();
     this._cd.detectChanges();
+    console.log('detectChanges')
   }
 
-  offUpdate(){
+  detach(){
     this._cd.detach();
   }
 

@@ -1,4 +1,4 @@
-import {WaytosaveType, EnumToArray} from "../../../models/enum.model";
+import {WaytosaveType, EnumToArray} from "../../../share/models/enum.model";
 import {Answers, Quiz} from "../quiz.model";
 
 export class WayToSave {

@@ -1,5 +1,5 @@
 import { Directive, Input, TemplateRef, ViewContainerRef, NgZone } from '@angular/core';
-import { AppConfig }  from '../../app.config';
+import { AppConfig }  from '../app.config';
 
 @Directive({
   selector: '[ifViewportSize]'

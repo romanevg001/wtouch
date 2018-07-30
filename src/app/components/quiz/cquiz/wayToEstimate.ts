@@ -1,4 +1,4 @@
-import {EstimateType, EnumToArray} from "../../../models/enum.model";
+import {EstimateType, EnumToArray} from "../../../share/models/enum.model";
 import {Answers, Quiz} from "../quiz.model";
 
 
@@ -40,7 +40,7 @@ class SeveralTries implements IWayToEstimate {
     }
 }
 
-
+/* 
 class MyClass {
     value;
     static get [Symbol.species]() {
@@ -79,11 +79,7 @@ let instance1 = new MyDerivedClass1("foo"),
     clone1 = instance1.clone(),
     instance2 = new MyDerivedClass2("bar"),
     clone2 = instance2.clone();
-/* console.log(clone1 instanceof MyClass);
-console.log(clone1 instanceof MyDerivedClass1);
-console.log(clone2 instanceof MyClass);
-console.log(clone2 instanceof MyDerivedClass2);
- */
+
 
 instance1.somemothod();
  Object.setPrototypeOf(instance1,instance2);
@@ -109,11 +105,12 @@ console.log(Object.prototype.toString.call(instance1), instance1.toString(),type
 
         }
     };
-/*  Object.assign(receiver, supplier);
+    
+    Object.assign(receiver, supplier);
   var descriptor = Object.getOwnPropertyDescriptor(receiver, "name");
  console.log(descriptor)
  console.log(receiver) 
- */
+ 
 
 
 
@@ -196,16 +193,14 @@ console.log('promiseTest=>')
 
 promiseTest.then((data)=>{
     console.log('data=>',data)
-   //throw new Error('ooops!')
 },(err)=>{
     console.log('reject=>',err)
-  //  throw new Error('ooops!')
 
 }).catch((err)=>{
     console.log('catch=>',err)
 
 })
-
+ */
 /* window['onunhandledrejection'] = function(err){
     console.log('wind onunhandledrejection err=>',err)
 }

@@ -6,15 +6,14 @@ import * as reducer from '../reducers';
 import {MatDialog, MatDialogRef} from '@angular/material';
 import { AddMovieComponent } from '../add-movie/add-movie.component';
 import { MovieService } from '../movie.services';
-import { SearchModel } from '../../../models/common.model';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/operator/take';
-import 'rxjs/add/observable/fromEvent';
+import { SearchModel } from '../../../share/models/common.model';
+import {Observable} from 'rxjs';
+
 
 @Component({
   selector: 'app-movie-list',
   templateUrl: './movie-list.component.html',
-  styleUrls: ['./movie-list.component.scss'],
+  styleUrls: ['./movie-list.component.scss']
 
 })
 export class MovieListComponent implements OnInit,AfterViewInit {
@@ -23,8 +22,10 @@ export class MovieListComponent implements OnInit,AfterViewInit {
   searchResults;
   editingMovie;
 
-  @ViewChild('btnDeleteMovie') _btnDeleteMovie: ElementRef;
+  @ViewChild('btnDeleteMovie', {read: ElementRef}) _btnDeleteMovie: ElementRef;
+  @ViewChild('btnCheck', {read: ElementRef}) _btnCheck: ElementRef;
   delMovie:Observable<any>;
+  resMovie = '';
 
   constructor(
     private store: Store<reducer.State>,
@@ -55,10 +56,13 @@ export class MovieListComponent implements OnInit,AfterViewInit {
   }
 
   getSearchResult(req: string){
-    this._movieService.getMovieList(req).take(10).subscribe((data)=>{
+    this.store.dispatch(new MovieActions.Load('love'));
+    this.movieList$ = this.store.select(reducer.getMovieList).take(10);
+    
+  /*   this._movieService.getMovieList(req).take(10).subscribe((data)=>{
       console.log(data)
       this.searchInfo.resultsList = data;
-    })
+    }) */
   }
 
   ngOnInit() {
@@ -85,10 +89,20 @@ export class MovieListComponent implements OnInit,AfterViewInit {
   } 
 
   ngAfterViewInit(){
-    this.delMovie = Observable.fromEvent(this._btnDeleteMovie.nativeElement,'click')
-    this.delMovie.subscribe(()=>{
-      console.log('click del')
-    })
+    this.delMovie = Observable.fromEvent(this._btnDeleteMovie.nativeElement,"click")
+    this.delMovie.map((x)=>{ console.log(x); return x})
+     .buffer(this.delMovie.debounce(()=>Observable.interval(500)))
+     .forEach((x)=>{console.log(x); 
+        console.log('click del')
+        this.resMovie += '.';
+      });
+
+      let stream = Observable.fromEvent(this._btnCheck.nativeElement,'change')
+      .map((x)=>{ console.log((x['target'] as HTMLInputElement).checked)});
+
+      stream.subscribe(()=>{
+    
+      }) 
   }
 
 }

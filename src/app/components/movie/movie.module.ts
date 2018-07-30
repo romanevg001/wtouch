@@ -12,7 +12,7 @@ import { MovieListComponent } from './movie-list/movie-list.component';
 import { AddMovieComponent } from './add-movie/add-movie.component';
 import { MovieComponent } from './movie/movie.component';
 //import { SearchMovieComponent } from './search-movie/search-movie.component';
-import { ShareModule }       from '../share/share.module';
+import { ShareModule }       from '../../share/share.module';
 import { EditMovieComponent } from './edit-movie/edit-movie.component';
 import { MovieItemComponent } from './movie-item/movie-item.component';
 

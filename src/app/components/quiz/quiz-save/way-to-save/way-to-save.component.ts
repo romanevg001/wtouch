@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {WaytosaveType, EnumToArray, IenumArray} from "../../../../models/enum.model";
+import {WaytosaveType, EnumToArray, IenumArray} from "../../../../share/models/enum.model";
 import {Quiz} from "../../quiz.model";
 
 @Component({

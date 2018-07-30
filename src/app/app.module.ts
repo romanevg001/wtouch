@@ -18,7 +18,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { AppConfig }       from './app.config';
 import { HttpContract }       from './contracts/http.contract';
 /* import * as b from 'ngx-bootstrap'; */
-import { ShareModule }       from './components/share/share.module';
+import { ShareModule }       from './share/share.module';
 
 
 @NgModule({

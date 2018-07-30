@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
 import { Effect, Actions, ofType } from '@ngrx/effects';
-import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
+import { Observable, of } from 'rxjs';
+import { map, mergeMap, catchError } from 'rxjs/operators';
 import * as MovieActions from './movie.actions';
-import { switchMap, toArray, map, catchError, mergeMap } from 'rxjs/operators';
+
 import {MovieService} from './movie.services';
-import { select, Store } from '@ngrx/store';
-import { pluck } from '../../../../node_modules/rxjs-compat/operator/pluck';
+
 
 @Injectable()
 export class MovieEffects {
