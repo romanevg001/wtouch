@@ -39,7 +39,7 @@ import { MovieItemComponent } from './movie-item/movie-item.component';
   bootstrap: [
     MovieListComponent
   ],
-  providers:[MovieService]
+  providers:[{provide: MovieService, useClass: MovieService}]
   
 })
 export class MovieModule {}

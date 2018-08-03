@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {WaytosaveType, EnumToArray, IenumArray} from "../../../../share/models/enum.model";
-import {Quiz} from "../../quiz.model";
+import {Quiz} from "../../../../share/models/quiz.model";
 
 @Component({
   selector: 'app-way-to-save',

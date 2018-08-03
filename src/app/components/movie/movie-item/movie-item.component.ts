@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy, OnChanges, DoCheck, ChangeDetectorRef,
   ViewChild, AfterViewInit, ElementRef, Input, Output, EventEmitter } from '@angular/core';
-
+import * as Immutable from 'Immutable';
 @Component({
   selector: 'app-movie-item',
   templateUrl: './movie-item.component.html',
@@ -16,7 +16,8 @@ export class MovieItemComponent implements OnInit, OnChanges,AfterViewInit, DoCh
   conter:number = 0;
   
   constructor(private _cd: ChangeDetectorRef) {
-    this.origMovie = {...this.movie};
+ 
+
   }
 
   ngOnInit() {
@@ -30,12 +31,13 @@ export class MovieItemComponent implements OnInit, OnChanges,AfterViewInit, DoCh
 
 
   ngOnChanges(){
+    this.origMovie = Immutable.fromJS(this.movie);
+    console.log(this.movie, this.origMovie)
+    console.log(this.origMovie.get('title'),' === ',this.movie.title)
 
   }
 
   ngDoCheck(){
-    console.log(this.origMovie.title,' === ',this.movie.title)
-
     if( (JSON.stringify(this.origMovie)!=JSON.stringify(this.movie))){
       this.reattach();
     }

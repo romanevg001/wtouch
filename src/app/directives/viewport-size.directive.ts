@@ -27,9 +27,9 @@ export class ViewportSizeDirective {
 
   renderEl(){
     if( 
-        (this.inputSize == 'small' && (window.innerWidth < Number(this.config.getConfig('medium')))) ||
-        (this.inputSize == 'medium' && (Number(this.config.getConfig('medium')) <= window.innerWidth) &&(window.innerWidth < Number(this.config.getConfig('large')))) ||
-        (this.inputSize == 'large' && (Number(this.config.getConfig('large')) <= window.innerWidth))
+        (this.inputSize == 'small' && (window.innerWidth < Number(this.config.get('medium')))) ||
+        (this.inputSize == 'medium' && (Number(this.config.get('medium')) <= window.innerWidth) &&(window.innerWidth < Number(this.config.get('large')))) ||
+        (this.inputSize == 'large' && (Number(this.config.get('large')) <= window.innerWidth))
       ){
         if(!this.hasView) this._viewContainer.createEmbeddedView(this._templateRef);
         this.hasView = true;

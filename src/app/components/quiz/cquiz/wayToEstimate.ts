@@ -1,5 +1,5 @@
 import {EstimateType, EnumToArray} from "../../../share/models/enum.model";
-import {Answers, Quiz} from "../quiz.model";
+import {Answers, Quiz} from "../../../share/models/quiz.model";
 
 
 export interface IWayToEstimate {

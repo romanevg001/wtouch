@@ -1,5 +1,5 @@
 import { Component, OnInit,Input, Output } from '@angular/core';
-import {Quiz} from "../quiz.model";
+import {Quiz} from "../../../share/models/quiz.model";
 import {WayToEstimate} from "../cquiz/wayToEstimate";
 import {WayToSave} from "../quiz-save/wayToSave";
 

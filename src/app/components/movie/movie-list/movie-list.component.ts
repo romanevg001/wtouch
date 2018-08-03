@@ -7,7 +7,7 @@ import {MatDialog, MatDialogRef} from '@angular/material';
 import { AddMovieComponent } from '../add-movie/add-movie.component';
 import { MovieService } from '../movie.services';
 import { SearchModel } from '../../../share/models/common.model';
-import {Observable} from 'rxjs';
+import {Observable} from 'rxjs/Observable';
 
 
 @Component({
@@ -24,12 +24,12 @@ export class MovieListComponent implements OnInit,AfterViewInit {
 
   @ViewChild('btnDeleteMovie', {read: ElementRef}) _btnDeleteMovie: ElementRef;
   @ViewChild('btnCheck', {read: ElementRef}) _btnCheck: ElementRef;
+  @ViewChild('btnAddMovie', {read: ElementRef}) _btnAddMovie: ElementRef;
   delMovie:Observable<any>;
   resMovie = '';
 
   constructor(
     private store: Store<reducer.State>,
-    private _movieService: MovieService,
     private _router: Router,
     public dialog: MatDialog,
   ) {    /*  search */
@@ -96,6 +96,14 @@ export class MovieListComponent implements OnInit,AfterViewInit {
         console.log('click del')
         this.resMovie += '.';
       });
+
+
+      Observable.fromEvent(this._btnAddMovie.nativeElement,"click")
+      .switchMap(()=>{
+        return Observable.interval(1000)
+
+      }).subscribe(x=>console.log(x));
+      
 
       let stream = Observable.fromEvent(this._btnCheck.nativeElement,'change')
       .map((x)=>{ console.log((x['target'] as HTMLInputElement).checked)});

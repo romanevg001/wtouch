@@ -11,7 +11,7 @@ export class HttpContract {
     constructor(private _config: AppConfig ){}
 
     public  setBaseApiUrl(url?: string): string {
-        return this._config.getConfig('api') + (url?url:'');
+        return this._config.get('api') + (url?url:'');
     }
 
     public  commonHeaders(): Headers {

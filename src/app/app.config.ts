@@ -7,7 +7,7 @@ export class AppConfig {
 
     private config: Object = config;
 
-    public getConfig(key: any) {
+    public get(key: any) {
         return this.config[key];
     }
 

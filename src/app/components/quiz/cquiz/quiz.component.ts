@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as  en  from '../../../share/models/enum.model';
-import * as  m  from '../quiz.model';
+import * as  m  from '../../../share/models/quiz.model';
 
 
 @Component({
