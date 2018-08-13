@@ -19,14 +19,11 @@ import { AppConfig }       from './app.config';
 import { HttpContract }       from './contracts/http.contract';
 /* import * as b from 'ngx-bootstrap'; */
 import { ShareModule }       from './share/share.module';
-import { ThreadSectionComponent } from './components/thread-section/thread-section.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ThreadSectionComponent,
-    
+    AppComponent
   ],
   imports: [
     ShareModule,

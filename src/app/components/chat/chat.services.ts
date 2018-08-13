@@ -2,7 +2,7 @@ import { Http} from '@angular/http';
 
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import {AllUserData} from '../share/to/all-user-data.model';
+import {AllUserData} from '../../share/to/all-user-data.model';
 
 @Injectable({
   providedIn: 'root'

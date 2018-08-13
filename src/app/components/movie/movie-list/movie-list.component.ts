@@ -49,7 +49,6 @@ export class MovieListComponent implements OnInit,AfterViewInit {
   searchСallBack(req: string) {
       if(req) {
         this._router.navigate(['/movies',req['id']]);
-        console.log(req)
       }else{
         this.searchInfo.resultsList = [];
       }
@@ -67,7 +66,10 @@ export class MovieListComponent implements OnInit,AfterViewInit {
 
   ngOnInit() {
     this.store.dispatch(new MovieActions.Load('love'));
-    this.movieList$ = this.store.select(reducer.getMovieList).take(10);
+    this.movieList$ = this.store.select(reducer.getMovieList);
+
+      console.log(this.movieList$)
+      console.log(this.store.select('movies'))
   
   }
 
@@ -87,6 +89,10 @@ export class MovieListComponent implements OnInit,AfterViewInit {
     console.log('movie',movie)
     this.editingMovie = movie;
   } 
+
+  changeAllValues(){ 
+   // this.movieList$ = this.movieList$.
+  }
 
   ngAfterViewInit(){
     this.delMovie = Observable.fromEvent(this._btnDeleteMovie.nativeElement,"click")

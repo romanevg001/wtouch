@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, OnChanges, Input,
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, OnChanges, Input, DoCheck
  } from '@angular/core';
 
 @Component({
@@ -8,19 +8,18 @@ import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, OnChange
   changeDetection: ChangeDetectionStrategy.OnPush
 
 })
-export class EditMovieComponent {
+export class EditMovieComponent  {
   @Input() data;
   public name:number=0;
 
   constructor(public cd: ChangeDetectorRef) {
   //  this.cd.detach()
-    let key = setInterval(()=>{
+/*     let key = setInterval(()=>{
       this.name += 3;
       if(this.name > 80) clearInterval(key);
-    },1000)
+    },1000) */
 
   }
-
 
   onChange() {
     this.name= 88;

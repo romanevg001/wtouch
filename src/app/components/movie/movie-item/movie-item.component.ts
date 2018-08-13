@@ -32,9 +32,6 @@ export class MovieItemComponent implements OnInit, OnChanges,AfterViewInit, DoCh
 
   ngOnChanges(){
     this.origMovie = Immutable.fromJS(this.movie);
-    console.log(this.movie, this.origMovie)
-    console.log(this.origMovie.get('title'),' === ',this.movie.title)
-
   }
 
   ngDoCheck(){
@@ -50,7 +47,6 @@ export class MovieItemComponent implements OnInit, OnChanges,AfterViewInit, DoCh
   reattach(){
    // this._cd.markForCheck();
     this._cd.detectChanges();
-    console.log('detectChanges')
   }
 
   detach(){

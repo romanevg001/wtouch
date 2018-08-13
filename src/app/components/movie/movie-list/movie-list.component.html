@@ -6,6 +6,12 @@
     <mat-icon>add</mat-icon> Add
 </button>
 <br>
+<button mat-icon-button (click)="changeAllValues()">
+        changeAllValues
+</button>
+    
+
+<br>
 <label><input type="checkbox"  #btnCheck>Checkbox label</label>
 <br>
 
@@ -27,6 +33,7 @@
             <mat-list>
                 <app-movie-item *ngFor="let movie of movieList$ | async" [movie]="movie" (emEditMovie)="editMovie($event)"></app-movie-item>
             </mat-list>
+         
         </mat-card-content>
     <div *ngIf="editingMovie">
         <app-edit-movie [data]='editingMovie'></app-edit-movie> 
